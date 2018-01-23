@@ -87,8 +87,9 @@ def f(a: Dict[str, str]):
 f({'name': 'value'}) # OK
 ```
 
-Dictのフィールドごとの型指定はできない。(issue)[https://github.com/python/typing/issues/28]で議論はされている。
-(NamedTuple)[https://docs.python.org/3/library/typing.html#typing.NamedTuple]ならばフィールド毎の型指定が可能だが、DictとNamedTupleはそもそも使い方が大分違うので微妙。
+Dictのフィールドごとの型指定はできない。[issue](https://github.com/python/typing/issues/28)で議論はされている。
+
+[NamedTuple](https://docs.python.org/3/library/typing.html#typing.NamedTuple)ならばフィールド毎の型指定が可能だが、DictとNamedTupleはそもそも使い方が大分違うので微妙。
 
 ### flowとの比較
 
@@ -99,7 +100,7 @@ function f(a: {name: string, age: number}) {
   console.log(a)
 }
 
-// f({name: 10, age: 10}) // エラー。10がstrではない。
+// f({name: 10, age: 10}) // エラー。10がstringではない。
 f({name: 'Bob', age: 10}) // OK
 
 ```
