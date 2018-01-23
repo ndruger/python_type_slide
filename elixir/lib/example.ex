@@ -1,22 +1,15 @@
 defmodule Example do
-  defmodule X do
-    @type t :: %__MODULE__{name: String.t}
-    defstruct [:name]
+  @spec f1(String.t) :: :ok
+  defp f1(a) do
+    IO.puts(a)
   end
 
-  defmodule Y do
-    @type t :: %__MODULE__{name: String.t}
-    defstruct [:name]
+  defp f2(a) do
+    f1(a)
   end
 
-  def hello do
-    # test2(%X{name: "test"}) # OK
-    # test2(%Y{name: "test"}) # エラー
-  end
-
-  @spec test2(X.t) :: boolean
-  defp test2(a) do
-    IO.inspect(a)
-    true
+  def main() do
+    f2(10) # エラー。
+    # f2("text") # OK
   end
 end

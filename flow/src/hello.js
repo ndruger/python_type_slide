@@ -1,8 +1,11 @@
 // @flow
 
-function f(a: {name: string, age: number}) {
+function f(a: string) {
   console.log(a)
 }
 
-// f({name: 10, age: 10}) // エラー。10がstrではない。
-f({name: 'Bob', age: 10}) // OK
+function f2(a) {
+  f(a)
+}
+
+f2(10); // エラーになる。

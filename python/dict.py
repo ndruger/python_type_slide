@@ -19,6 +19,9 @@ f4(cast(TypeX, 10)) # OK。intをTypeXにキャスト
 f4(cast(Any, 10)) # OK。intをTypeXにキャスト
 # f4(cast(Any, "str")) # OK(型チェックとしては)。ただし実行時にf4()内で+1されるとエラーになる。
 
+# Unicon(TODO)
+
+
 # クラス (TODO: 継承とsuper)
 
 # TODO: type script and flowを比較に追加。nominal/structuralな例＆subtypeの振る舞い。
@@ -67,7 +70,6 @@ f5(["s"])
 s = ["s"] # type: TypeB
 f5(s)
 
-# Unicon(TODO)
 
 # Generics(TODO)
 
