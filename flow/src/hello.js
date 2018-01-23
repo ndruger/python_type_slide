@@ -1,8 +1,8 @@
 // @flow
 
-function hello(lang: string) {
-  console.log("Hello " + lang)
+function f(a: {name: string, age: number}) {
+  console.log(a)
 }
 
-hello("JavaScript");
-// hello(10);
+// f({name: 10, age: 10}) // エラー。10がstrではない。
+f({name: 'Bob', age: 10}) // OK

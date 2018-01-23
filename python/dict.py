@@ -1,36 +1,3 @@
-# Support Type: https://docs.python.org/3/library/typing.html
-from typing import Dict, Tuple, List
-
-# List
-
-def f1(a: List[float]):
-    print(a)
-
-#f1('a') # エラー
-f1([10.0]) # OK
-
-
-# Tupple & Alias
-
-TypedTuple = Tuple[str, str, int]
-
-def f2(a: TypedTuple):
-    print(a)
-
-#f2(('a', 'b', 'c')) # エラー
-f2(('a', 'b', 1)) # OK
-
-
-# Dict
-
-def f3(a: Dict[str, str]):
-    print(a)
-
-#f3({'key': 10}) # エラー
-f3({'key': 'value'}) # OK
-
-# フィールド定義付きのDict定義方法はまだない。 https://github.com/python/typing/issues/28
-
 
 # NewType
 
@@ -54,11 +21,11 @@ f4(cast(Any, 10)) # OK。intをTypeXにキャスト
 
 # クラス (TODO: 継承とsuper)
 
-# TODO: type script and flowを比較に追加。nominal/structualな例＆subtypeの振る舞い。
-# nominalならばstructualをどう対応するかでflowはinterfaceしたけど、pythonは？
+# TODO: type script and flowを比較に追加。nominal/structuralな例＆subtypeの振る舞い。
+# nominalならばstructuralをどう対応するかでflowはinterfaceしたけど、pythonは？
 # subclass/superも比較。
 # bound(TODO)もあるが、それは一旦置くか。
-# structual typeの提言はあったらしいが・・・。 https://www.python.org/dev/peps/pep-0544/
+# structural typeの提言はあったらしいが・・・。 https://www.python.org/dev/peps/pep-0544/
 
 class MySuperClass:
     super_name: str
