@@ -15,7 +15,7 @@ hello("Python") # OK
 
 ### flowの構文の比較
 
-```flow
+```javascript
 function hello(a: string) {
   console.log("Hello " + a)
 }
