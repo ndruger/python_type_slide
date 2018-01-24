@@ -188,4 +188,5 @@ z = x # OK。引数の場合と同じで、Anyが持つ値を他の型にも入�
 ```python
 ```
 
+
 flowには`NoReturn`に相当するものがない。dialyzerでは`no_return`がこれに当たる。
