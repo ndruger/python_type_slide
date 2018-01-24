@@ -1,7 +1,9 @@
-from typing import Any
+from typing import NewType, cast, Any
 
-x: Any = 'text'
-x = 10
+TypeX = NewType('TypeX', int)
 
-z: bool = True
-z = x # OK。Anyが持つ値を他の型にも入れることができてしまう。
+def f4(a: TypeX):
+    print(a + 1)
+
+f4(10) # NG。intはTypeXではない。Nominal Typingなのでエラーになる。
+# f4(TypeX(10)) # OK

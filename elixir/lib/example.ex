@@ -1,15 +1,15 @@
 defmodule Example do
-  @spec f1(String.t) :: no_return
+  @spec f1(String.t) :: :ok
   defp f1(a) do
     IO.puts(a)
-    raise "aa"
+  end
+
+  defp f2(a) do
+    f1(a)
   end
 
   def main() do
-    try do
-      f1("a")
-    rescue
-      e -> IO.puts("neko")
-    end
+    f2(10) # エラー。
+    # f2('text') # OK
   end
 end
