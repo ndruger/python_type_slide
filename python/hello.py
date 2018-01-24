@@ -1,9 +1,6 @@
-from typing import NewType, cast, Any
+def f(a: str) -> bool:
+    print('Hello ' + a)
+    return True
 
-TypeX = NewType('TypeX', int)
-
-def f4(a: TypeX):
-    print(a + 1)
-
-f4(10) # NG。intはTypeXではない。Nominal Typingなのでエラーになる。
-# f4(TypeX(10)) # OK
+# f(10) # NG。10がstrではない。
+f('Python') # OK

@@ -132,7 +132,7 @@ f2(10) # エラーにならない。
 
 flowは相当コードを見てくれるので、f2の引数がnumber(少なくともnumberを含む型)だと推論してf()の呼び出しを見つけてエラーにしてくれる。
 
-```flow
+```javascript
 function f(a: string) {
   console.log(a)
 }
@@ -280,7 +280,7 @@ o = MyClass1()
 
 flowのクラスもNominal Typingでチェックされる。
 
-```flow
+```javascript
 class A {
   name: string;
   constructor(name: string) {
