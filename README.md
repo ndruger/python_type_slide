@@ -276,7 +276,7 @@ o = MyClass1()
 # o.method_a() # NG。method_aというメソッドを持たない。
 ```
 
-### flow
+### flowとの比較
 
 flowのクラスもNominal Typingでチェックされる。
 
@@ -358,9 +358,14 @@ f(TypeX(10)) # OK
 ```
 
 
-## flowがどの程度型の操作ができるのか？
+## Generics
 
-型を大分自由自在に組み合わせて別の型を作れる。
+定義可能。詳細は省略。
+
+
+## おまけ: flowがどの程度型の操作ができるのか？
+
+型を操作して組み合わせて別の型を作れる。
 
 ```javascript
 type A = {name: string, age: number, height: number};
