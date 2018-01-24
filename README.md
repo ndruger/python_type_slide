@@ -245,6 +245,11 @@ f(5); // OK
 ```
 
 
+## Optional
+
+`Optional[X]`は`Union[X, type(None)]`と同じ。
+
+
 ## クラス
 
 クラスの型チェックはNominal Typingで行われる。Structural Typingではない。
