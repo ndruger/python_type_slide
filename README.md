@@ -161,7 +161,7 @@ end
 
 ## Any, None
 
-Anyは全てにマッチするし、Noneはないものにマッチする。
+`Any`は全てにマッチするし、`None`はないものにマッチする。
 
 ```python
 from typing import Any
@@ -178,8 +178,10 @@ x: Any = 'text'
 x = 10 # OK。その変数の含む値の型が変わる場合も許される。
 
 z: bool = True
-z = x # OK。Anyが持つ値を他の型にも入れることができてしまう。
+z = x # OK。引数の場合と同じで、Anyが持つ値を他の型にも入れることができてしまう。
 ```
+
+この`Any`の挙動はflowの`any`も同じ。flowには任意の値を入れることはできるがそれが持つ値を更に利用させないための型として[mixed](https://flow.org/en/docs/types/mixed/)がある。
 
 ## NoReturn
 
