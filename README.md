@@ -123,7 +123,7 @@ f2(10) # エラーにならない。
 
 ### flowとの比較
 
-flowは相当コードを見てくれるので、f2の引数がnumberだと推論してf()の呼び出しを見つけてエラーにしてくれる。
+flowは相当コードを見てくれるので、f2の引数がnumber(少なくともnumberを含む型)だと推論してf()の呼び出しを見つけてエラーにしてくれる。
 
 ```flow
 function f(a: string) {
@@ -139,7 +139,7 @@ f2(10); // エラーになる。
 
 ### dialyzerとの比較
 
-dialyzerもエラーにしてくれる。
+dialyzerもエラーにしてくれる。Success Typingに従っても明らかなエラーであるため。
 
 ```elixir
 defmodule Example do
@@ -154,7 +154,36 @@ defmodule Example do
 
   def main() do
     f2(10) # エラー。
-    # f2("text") # OK
+    # f2('text') # OK
   end
 end
 ```
+
+## Any, None
+
+Anyは全てにマッチするし、Noneはないものにマッチする。
+
+```python
+from typing import Any
+
+def f(a: Any) -> None:
+    print(a)
+
+f(10) # OK
+f('text') # OK
+
+from typing import Any
+
+x: Any = 'text'
+x = 10 # OK。その変数の含む値の型が変わる場合も許される。
+
+z: bool = True
+z = x # OK。Anyが持つ値を他の型にも入れることができてしまう。
+```
+
+## NoReturn
+
+```python
+```
+
+flowには`NoReturn`に相当するものがない。dialyzerでは`no_return`がこれに当たる。
