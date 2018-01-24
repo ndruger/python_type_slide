@@ -1,7 +1,15 @@
 # Python Type Hints
 
-Python Type Hintsのmypyの動作を他の後付け静的型チェックと比較して見ていく。
+Python Type Hintsのmypyの動作を他の後付け静的型チェック(主にflow)と比較して見ていく。
 
+## 確認環境
+
+- Python 3.6.2
+- Flow 0.63.1
+- Typescript 2.6.2
+- Elixir 1.6.0
+  - erlang 20.1
+  - dialyze 0.2.1
 
 ## 例
 
